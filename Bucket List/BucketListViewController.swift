@@ -16,7 +16,7 @@ class BucketListViewController: UITableViewController , AddItemTableViewControll
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        itemList.append("Go shopping")
+        itemList.append("Go shopping 1")
         itemList.append("Go to the moon")
         itemList.append("Go the mall")
      
