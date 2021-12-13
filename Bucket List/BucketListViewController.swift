@@ -22,6 +22,9 @@ class BucketListViewController: UITableViewController , AddItemTableViewControll
      
         
     }
+    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "ItemSegue", sender: sender)
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemList.count
@@ -43,17 +46,18 @@ class BucketListViewController: UITableViewController , AddItemTableViewControll
         tableView.reloadData()
     }
     override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
-        performSegue(withIdentifier: "EditItemSegue", sender: indexPath)
+        performSegue(withIdentifier: "ItemSegue", sender: indexPath)
+    
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "AddItemSegue"{
+        if sender is UIBarButtonItem {
             
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController
             addItemTableViewController.delegate = self
             
-        }else if segue.identifier == "EditItemSegue"{
+        }else if sender is IndexPath{
             
             let navigationController = segue.destination as! UINavigationController
             let addItemTableViewController = navigationController.topViewController as! AddItemTableViewController

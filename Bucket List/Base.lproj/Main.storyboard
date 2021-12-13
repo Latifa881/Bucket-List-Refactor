@@ -33,13 +33,13 @@
                     <navigationItem key="navigationItem" id="KkA-iu-4Sh">
                         <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="HJm-D7-vpD">
                             <connections>
-                                <segue destination="hXY-ge-gqw" kind="presentation" identifier="AddItemSegue" id="dcz-lC-lic"/>
+                                <action selector="addButtonPressed:" destination="xnB-lW-zIs" id="3CC-oo-4N3"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <segue destination="hXY-ge-gqw" kind="presentation" identifier="EditItemSegue" id="mLq-AE-ABZ"/>
+                        <segue destination="hXY-ge-gqw" kind="presentation" identifier="ItemSegue" id="mLq-AE-ABZ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lgg-qy-6Wn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -143,9 +143,6 @@
             <point key="canvasLocation" x="1848" y="141"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="mLq-AE-ABZ"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
