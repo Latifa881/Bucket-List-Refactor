@@ -18,6 +18,7 @@
 		C3DB9065276672C4008EB57D /* Bucket_ListUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB9064276672C4008EB57D /* Bucket_ListUITestsLaunchTests.swift */; };
 		C3DB907227667AC3008EB57D /* AddItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB907127667AC3008EB57D /* AddItemTableViewController.swift */; };
 		C3DB9076276680E8008EB57D /* AddItemTableViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB9075276680E8008EB57D /* AddItemTableViewControllerDelegate.swift */; };
+		C3DB90B227675D11008EB57D /* BucketListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3DB90B027675D11008EB57D /* BucketListModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		C3DB9064276672C4008EB57D /* Bucket_ListUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bucket_ListUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C3DB907127667AC3008EB57D /* AddItemTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewController.swift; sourceTree = "<group>"; };
 		C3DB9075276680E8008EB57D /* AddItemTableViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemTableViewControllerDelegate.swift; sourceTree = "<group>"; };
+		C3DB90B127675D11008EB57D /* BucketListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketListModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				C3DB9043276672BE008EB57D /* SceneDelegate.swift */,
 				C3DB9045276672BE008EB57D /* BucketListViewController.swift */,
 				C3DB9047276672BE008EB57D /* Main.storyboard */,
+				C3DB90B027675D11008EB57D /* BucketListModel.xcdatamodeld */,
 				C3DB907127667AC3008EB57D /* AddItemTableViewController.swift */,
 				C3DB9075276680E8008EB57D /* AddItemTableViewControllerDelegate.swift */,
 				C3DB904A276672C3008EB57D /* Assets.xcassets */,
@@ -267,6 +270,7 @@
 				C3DB907227667AC3008EB57D /* AddItemTableViewController.swift in Sources */,
 				C3DB9046276672BE008EB57D /* BucketListViewController.swift in Sources */,
 				C3DB9042276672BE008EB57D /* AppDelegate.swift in Sources */,
+				C3DB90B227675D11008EB57D /* BucketListModel.xcdatamodeld in Sources */,
 				C3DB9044276672BE008EB57D /* SceneDelegate.swift in Sources */,
 				C3DB9076276680E8008EB57D /* AddItemTableViewControllerDelegate.swift in Sources */,
 			);
@@ -632,6 +636,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3DB90B027675D11008EB57D /* BucketListModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3DB90B127675D11008EB57D /* BucketListModel.xcdatamodel */,
+			);
+			currentVersion = C3DB90B127675D11008EB57D /* BucketListModel.xcdatamodel */;
+			path = BucketListModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3DB9036276672BE008EB57D /* Project object */;
 }

@@ -6,21 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class BucketListViewController: UITableViewController , AddItemTableViewControllerDelegate {
    
+    let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var itemList = [ItemListEntity]()
 
-    var itemList:[String]=[String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        itemList.append("Go shopping 1")
-        itemList.append("Go to the moon")
-        itemList.append("Go the mall")
-     
-        
+        fetchAllItems()
     }
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "ItemSegue", sender: sender)
@@ -32,7 +28,7 @@ class BucketListViewController: UITableViewController , AddItemTableViewControll
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemListCell", for: indexPath)
-        cell.textLabel?.text = itemList[indexPath.row]
+        cell.textLabel?.text = itemList[indexPath.row].name
         
         return cell
     }
@@ -42,6 +38,15 @@ class BucketListViewController: UITableViewController , AddItemTableViewControll
 //
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let item = itemList[indexPath.row]
+        managedObjectContext.delete(item)
+                
+                do {
+                    try managedObjectContext.save()
+                   
+                }catch{
+                    print(error.localizedDescription)
+                }
         itemList.remove(at: indexPath.row)
         tableView.reloadData()
     }
@@ -65,24 +70,48 @@ class BucketListViewController: UITableViewController , AddItemTableViewControll
             
             guard let indexPath = sender as? NSIndexPath else{return}
             let item = itemList[indexPath.row]
-            addItemTableViewController.itemEdit = item
+            addItemTableViewController.itemEdit = item.name
             addItemTableViewController.indexPath = indexPath
             
         }
     }
     
-
+    func fetchAllItems(){
+            
+            let itemRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "ItemListEntity")
+            do {
+                let results = try managedObjectContext.fetch(itemRequest)
+                itemList = results as! [ItemListEntity]
+            } catch {
+                print("\(error)")
+            }
+            tableView.reloadData()
+        }
+    
     func ItemSaved(by controller: AddItemTableViewController, with text: String,  at indexPth : NSIndexPath? ) {
+       
+      
         
         if let editIndexPath = indexPth{
             
-            itemList[editIndexPath.row] = text
-            
+            let item = itemList[editIndexPath.row]
+            item.name = text
+          
         }else{
             
-            itemList.append(text)
+            let thing = NSEntityDescription.insertNewObject(forEntityName: "ItemListEntity", into: managedObjectContext) as! ItemListEntity
+                        thing.name = text
+            itemList.append(thing)
         }
-       
+        
+        if managedObjectContext.hasChanges{
+                    do {
+                        try managedObjectContext.save()
+                       
+                    }catch{
+                        print(error.localizedDescription)
+                    }
+                }
         tableView.reloadData()
         dismiss(animated: true, completion: nil)
     }
