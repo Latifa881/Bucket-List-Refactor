@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C365288D27724CBA00629027 /* TaskModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C365288C27724CBA00629027 /* TaskModel.swift */; };
 		C3DB9042276672BE008EB57D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB9041276672BE008EB57D /* AppDelegate.swift */; };
 		C3DB9044276672BE008EB57D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB9043276672BE008EB57D /* SceneDelegate.swift */; };
 		C3DB9046276672BE008EB57D /* BucketListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DB9045276672BE008EB57D /* BucketListViewController.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C365288C27724CBA00629027 /* TaskModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskModel.swift; sourceTree = "<group>"; };
 		C3DB903E276672BE008EB57D /* Bucket List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bucket List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3DB9041276672BE008EB57D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3DB9043276672BE008EB57D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				C3DB904A276672C3008EB57D /* Assets.xcassets */,
 				C3DB904C276672C3008EB57D /* LaunchScreen.storyboard */,
 				C3DB904F276672C3008EB57D /* Info.plist */,
+				C365288C27724CBA00629027 /* TaskModel.swift */,
 			);
 			path = "Bucket List";
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 				C3DB90B227675D11008EB57D /* BucketListModel.xcdatamodeld in Sources */,
 				C3DB9044276672BE008EB57D /* SceneDelegate.swift in Sources */,
 				C3DB9076276680E8008EB57D /* AddItemTableViewControllerDelegate.swift in Sources */,
+				C365288D27724CBA00629027 /* TaskModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

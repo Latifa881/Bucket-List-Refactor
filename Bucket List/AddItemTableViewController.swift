@@ -11,12 +11,18 @@ class AddItemTableViewController: UITableViewController {
     
     @IBOutlet weak var itemTextField: UITextField!
     weak var delegate: AddItemTableViewControllerDelegate?
+    //MARK: API
+    var task: [TaskResult]?
+    var currentTask: TaskResult?
     
     var itemEdit:String?
-    var indexPath: NSIndexPath?
-    
+    //MARK: CoreData
+    var indexPathCD: NSIndexPath?
+    //MARK: API
+    var indexPath: IndexPath?
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         itemTextField.text = itemEdit
   
     }
@@ -27,7 +33,13 @@ class AddItemTableViewController: UITableViewController {
     
 
     @IBAction func SaveButtonPressed(_ sender: UIBarButtonItem) {
+        
         guard let text = itemTextField.text else {return}
-        delegate?.ItemSaved(by: self, with :text ,at :indexPath)
+        //MARK: CoreData
+        //delegate?.ItemSaved(by: self, with :text ,at :indexPathCD)
+        //MARK: API
+        delegate?.taskSaved(by: self, with : text ,at : indexPath)
+        dismiss(animated: true, completion: nil)
+        
     }
 }
